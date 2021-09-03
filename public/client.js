@@ -48,8 +48,8 @@ function updateMousePosition(e) {
 		y: currentMousePosition.y
 	};
 	currentMousePosition = {
-		x: e.clientX - whiteboardElement.offsetLeft,
-		y: e.clientY - whiteboardElement.offsetTop
+		x: e.clientX - whiteboardElement.getBoundingClientRect().left,
+		y: e.clientY - whiteboardElement.getBoundingClientRect().top
 	};
 }
 

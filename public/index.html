@@ -7,11 +7,20 @@
 	<title>Collaborative Whiteboard</title>
 </head>
 <body>
-	<canvas id="whiteboard" width="500" height="500"></canvas>
-	<ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+	<div class="app">
+		<div class="container">
+			<!-- Whiteboard canvas -->
+			<canvas id="whiteboard" width="500" height="500"></canvas>
+
+			<!-- Chat box -->
+			<div>
+				<ul id="messages"></ul>
+				<form id="form" action="">
+					<input id="input" autocomplete="off" /><button>Send</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="client.js"></script>
