@@ -6,7 +6,6 @@ var whiteboardElement = document.getElementById("whiteboard");
 var messagesElement = document.getElementById("messages");
 var formElement = document.getElementById("form");
 
-
 // get canvas context that can be used to draw on the element
 var ctx = whiteboardElement.getContext('2d')
 var mouseDown = false;
@@ -15,11 +14,11 @@ var currentMousePosition = { x: 0, y: 0 };
 var brushRadius = 2;
 var brushStyle = 'black';
 
+// Handle behaviour for the canvas/whiteboard element being interacted with
 whiteboardElement.addEventListener("mousemove", function (e) {
 	updateMousePosition(e);
 	if (mouseDown) {
 		drawLine(previousMousePosition, currentMousePosition, brushRadius, brushStyle);
-		socket.emit('line', { from: previousMousePosition, to: currentMousePosition });
 	}
 }, false);
 whiteboardElement.addEventListener("mousedown", function (e) {
@@ -42,6 +41,7 @@ function drawLine(previousPosition, currentPosition, radius, style) {
 	ctx.stroke();
 	ctx.closePath();
 }
+// Store where the mouse was and is
 function updateMousePosition(e) {
 	previousMousePosition = {
 		x: currentMousePosition.x,
@@ -57,26 +57,15 @@ function updateMousePosition(e) {
 form.addEventListener('submit', function(e) {
 	e.preventDefault();
 	if (input.value) {
-		socket.emit('chat message', input.value);
 		input.value = '';
 	}
 });
 
-// Socket io handle received messages
 function appendMessageToChatHistory(msg) {
 	var item = document.createElement('li');
 	item.textContent = msg;
 	messages.appendChild(item);
 	messagesElement.scrollTop = messagesElement.scrollHeight;
 }
-socket.on('line', function(lineData) {
-	drawLine(lineData.from, lineData.to, brushRadius, brushStyle);
-});
-socket.on('chat message', function(msg) {
-	appendMessageToChatHistory(msg);
-});
-socket.on('chat history', function(msgHistory) {
-	msgHistory.forEach(function (message, index) {
-		appendMessageToChatHistory(message);
-	})
-});
+
+// Add socket IO event handlers

@@ -9,17 +9,8 @@ app.use(express.static('public'))
 
 let messages = [];
 
-io.on('connection', (socket) => {
-	console.log("New user.");
-	socket.emit('chat history', messages);
-	socket.on('chat message', (msg) => {
-		io.emit('chat message', msg); // Broadcast to all clients the chat message
-		messages.push(msg);
-	});
-	socket.on('line', (lineData) => {
-		io.emit('line', lineData); // Broadcast to all clients the line data
-	});
-});
+// Add socket io connection handler here.
+
 
 server.listen(8000, () => {
 	console.log('listening on *:8000');
