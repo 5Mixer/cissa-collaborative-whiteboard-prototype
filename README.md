@@ -3,6 +3,7 @@ A Socket IO Workshop prototype. Definitely not a ~~scribblio~~ imitation.
 
 Complements the [workshop slideshow](https://drive.google.com/file/d/1yNdDllVj7_Kgk-5MuxPPMXtV5cXKZR1O/view?usp=sharing).
 ![image](https://user-images.githubusercontent.com/8501694/131948198-2fec18e4-e738-4c43-a83a-3965277db0e8.png)
+Background image from https://skribbl.io/ - go play their fun party game! Used only for this repo's educational purpose.
 
 
 ## Familiar with React?
