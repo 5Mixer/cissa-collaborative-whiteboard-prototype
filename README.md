@@ -1,7 +1,7 @@
-# scrawlio CISSA workshop
+# scrawlio CISSA workshop [Hosted [3rd of September, 2021](https://fb.me/e/1qazvtL2w)]
 A Socket IO Workshop prototype. Definitely not a ~~scribblio~~ imitation. 
 
-Complements the [workshop slideshow](https://docs.google.com/presentation/d/18UGjw9yFQcperLTtKUVapMumDTqiL0U4rXA8_gspJfU/edit?usp=sharing).
+Complements the [workshop slideshow](https://drive.google.com/file/d/1yNdDllVj7_Kgk-5MuxPPMXtV5cXKZR1O/view?usp=sharing).
 ![image](https://user-images.githubusercontent.com/8501694/131948198-2fec18e4-e738-4c43-a83a-3965277db0e8.png)
 
 
